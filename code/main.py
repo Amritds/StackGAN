@@ -72,6 +72,6 @@ if __name__ == "__main__":
         algo = GANTrainer(output_dir)
         algo.train(dataloader, cfg.STAGE)
     else:
-        datapath= '%s/test/val_captions.t7' % (cfg.DATA_DIR)
+        datapath= '%s' % (cfg.DATA_PATH)
         algo = GANTrainer(output_dir)
         algo.sample(datapath, cfg.STAGE)

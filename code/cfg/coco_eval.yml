@@ -5,7 +5,7 @@ EMBEDDING_TYPE: 'cnn-rnn'
 GPU_ID: '0,1'
 Z_DIM: 100
 NET_G: '../models/coco/netG_epoch_90.pth'
-DATA_DIR: '../data/coco'
+DATA_PATH: '../../../mini_batch_captions.t7'
 WORKERS: 4
 IMSIZE: 256
 STAGE: 2
