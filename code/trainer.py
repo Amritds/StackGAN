@@ -231,7 +231,7 @@ class GANTrainer(object):
         #
         self.summary_writer.close()
 
-    def sample(self, datapath, stage=1):
+    def sample(self, datapath, stage=2):
         if stage == 1:
             netG, _ = self.load_network_stageI()
         else:
@@ -277,7 +277,7 @@ class GANTrainer(object):
             _, fake_imgs, mu, logvar = \
                 nn.parallel.data_parallel(netG, inputs, self.gpus)
             for i in range(batch_size):
-                save_name = '%s/%d.png' % (save_dir, count + i)
+                save_name = '%s/%d.jpg' % (save_dir, count + i)
                 im = fake_imgs[i].data.cpu().numpy()
                 im = (im + 1.0) * 127.5
                 im = im.astype(np.uint8)
