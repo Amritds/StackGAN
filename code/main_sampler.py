@@ -12,10 +12,6 @@ import datetime
 import dateutil
 import dateutil.tz
 
-
-dir_path = (os.path.abspath(os.path.join(os.path.realpath(__file__), './.')))
-sys.path.append(dir_path)
-
 from miscc.datasets import TextDataset
 from miscc.config import cfg, cfg_from_file
 from miscc.utils import mkdir_p
@@ -46,4 +42,4 @@ datapath= '%s' % (cfg.DATA_PATH)
 algo = GANTrainer(output_dir)
 
 def sample():
-    algo.sample(datapath, cfg.STAGE)
+    return algo.sample(datapath, cfg.STAGE)
