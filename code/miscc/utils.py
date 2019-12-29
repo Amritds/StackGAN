@@ -3,7 +3,7 @@ import errno
 import numpy as np
 
 from copy import deepcopy
-from miscc.config import cfg
+from StackGAN.code.miscc.config import cfg
 
 from torch.nn import init
 import torch
