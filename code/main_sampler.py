@@ -14,7 +14,7 @@ import dateutil.tz
 
 from StackGAN.miscc.datasets import TextDataset
 from StackGAN.miscc.config import cfg, cfg_from_file
-from STACKGAN.miscc.utils import mkdir_p
+from StackGAN.miscc.utils import mkdir_p
 from StackGAN.trainer import GANTrainer
 
 
