@@ -20,37 +20,8 @@ from StackGAN.code.miscc.utils import save_img_results, save_model
 from StackGAN.code.miscc.utils import KL_loss
 from StackGAN.code.miscc.utils import compute_discriminator_loss, compute_generator_loss
 
-from torch.utils.tensorboard import summary
-from torch.utils.tensorboard import FileWriter
-
-
 class GANTrainer(object):
-    def __init__(self, output_dir):
-        if cfg.TRAIN.FLAG:
-            self.model_dir = os.path.join(output_dir, 'Model')
-            self.image_dir = os.path.join(output_dir, 'Image')
-            self.log_dir = os.path.join(output_dir, 'Log')
-            mkdir_p(self.model_dir)
-            mkdir_p(self.image_dir)
-            mkdir_p(self.log_dir)
-            self.summary_writer = FileWriter(self.log_dir)
-
-        self.max_epoch = cfg.TRAIN.MAX_EPOCH
-        self.snapshot_interval = cfg.TRAIN.SNAPSHOT_INTERVAL
-
-        s_gpus = cfg.GPU_ID.split(',')
-        self.gpus = [int(ix) for ix in s_gpus]
-        self.num_gpus = len(self.gpus)
-        self.batch_size = cfg.TRAIN.BATCH_SIZE * self.num_gpus
-        torch.cuda.set_device(self.gpus[0])
-        cudnn.benchmark = True
-
-        if stage == 1:
-            self.NetG, _ = self.load_network_stageI()
-        else:
-            self.NetG, _ = self.load_network_stageII()
-        self.NetG.eval()
-        
+            
     # ############# For training stageI GAN #############
     def load_network_stageI(self):
         from model import STAGE1_G, STAGE1_D
