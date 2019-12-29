@@ -21,7 +21,7 @@ from StackGAN.code.miscc.utils import KL_loss
 from StackGAN.code.miscc.utils import compute_discriminator_loss, compute_generator_loss
 
 class GANTrainer(object):
-     def __init__(self, output_dir):        
+    def __init__(self, output_dir):        
         self.max_epoch = cfg.TRAIN.MAX_EPOCH
         self.snapshot_interval = cfg.TRAIN.SNAPSHOT_INTERVAL
         
