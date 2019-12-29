@@ -12,10 +12,10 @@ import datetime
 import dateutil
 import dateutil.tz
 
-from StackGAN.miscc.datasets import TextDataset
-from StackGAN.miscc.config import cfg, cfg_from_file
-from StackGAN.miscc.utils import mkdir_p
-from StackGAN.trainer import GANTrainer
+from StackGAN.code.miscc.datasets import TextDataset
+from StackGAN.code.miscc.config import cfg, cfg_from_file
+from StackGAN.code.miscc.utils import mkdir_p
+from StackGAN.code.trainer import GANTrainer
 
 
 cfg_from_file('cfg/coco_eval.yml')
