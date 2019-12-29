@@ -20,8 +20,8 @@ from StackGAN.code.miscc.utils import save_img_results, save_model
 from StackGAN.code.miscc.utils import KL_loss
 from StackGAN.code.miscc.utils import compute_discriminator_loss, compute_generator_loss
 
-from tensorboard import summary
-from tensorboard import FileWriter
+from torch.utils.tensorboard import summary
+from torch.utils.tensorboard import FileWriter
 
 
 class GANTrainer(object):
