@@ -4,8 +4,8 @@ DATASET_NAME: 'coco'
 EMBEDDING_TYPE: 'cnn-rnn'
 GPU_ID: '0'
 Z_DIM: 100
-NET_G: '/media/ssd/caption_data/models/coco/netG_epoch_90.pth'
-DATA_PATH: '/media/ssd/caption_data/mini_batch_captions.t7'
+NET_G: '/scratch/scratch5/adsue/caption_data/models/coco/netG_epoch_90.pth'
+DATA_PATH: '/scratch/scratch5/adsue/caption_data/mini_batch_captions.t7'
 WORKERS: 4
 IMSIZE: 256
 STAGE: 2
