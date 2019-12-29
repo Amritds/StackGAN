@@ -21,21 +21,21 @@ from StackGAN.code.miscc.utils import KL_loss
 from StackGAN.code.miscc.utils import compute_discriminator_loss, compute_generator_loss
 
 class GANTrainer(object):
-     def __init__(self, output_dir):
-        
+     def __init__(self, output_dir):        
         self.max_epoch = cfg.TRAIN.MAX_EPOCH
         self.snapshot_interval = cfg.TRAIN.SNAPSHOT_INTERVAL
-
+        
         s_gpus = cfg.GPU_ID.split(',')
         self.gpus = [int(ix) for ix in s_gpus]
         self.num_gpus = len(self.gpus)
         self.batch_size = cfg.TRAIN.BATCH_SIZE * self.num_gpus
         torch.cuda.set_device(self.gpus[0])
-        cudnn.benchmark = True    
-
+        cudnn.benchmark = True
+        
     # ############# For training stageI GAN #############
     def load_network_stageI(self):
         from model import STAGE1_G, STAGE1_D
+        
         netG = STAGE1_G()
         netG.apply(weights_init)
         print(netG)
