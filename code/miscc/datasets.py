@@ -14,7 +14,7 @@ import random
 import numpy as np
 import pandas as pd
 
-from miscc.config import cfg
+from StackGAN.code.miscc.config import cfg
 
 
 class TextDataset(data.Dataset):
