@@ -21,6 +21,7 @@ __C.NET_G = ''
 __C.NET_D = ''
 __C.STAGE1_G = ''
 __C.DATA_DIR = ''
+__C.DATA_PATH = ''
 __C.VIS_COUNT = 64
 
 __C.Z_DIM = 100
