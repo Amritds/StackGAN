@@ -13,12 +13,12 @@ import time
 import numpy as np
 import torchfile
 
-from miscc.config import cfg
-from miscc.utils import mkdir_p
-from miscc.utils import weights_init
-from miscc.utils import save_img_results, save_model
-from miscc.utils import KL_loss
-from miscc.utils import compute_discriminator_loss, compute_generator_loss
+from StackGAN.code.miscc.config import cfg
+from StackGAN.code.miscc.utils import mkdir_p
+from StackGAN.code.miscc.utils import weights_init
+from StackGAN.code.miscc.utils import save_img_results, save_model
+from StackGAN.code.miscc.utils import KL_loss
+from StackGAN.code.miscc.utils import compute_discriminator_loss, compute_generator_loss
 
 from tensorboard import summary
 from tensorboard import FileWriter
