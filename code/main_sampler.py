@@ -18,7 +18,7 @@ from StackGAN.code.miscc.utils import mkdir_p
 from StackGAN.code.trainer import GANTrainer
 
 
-cfg_from_file('~/a-PyTorch-Tutorial-to-Image-Captioning/StackGAN/code/cfg/coco_eval.yml')
+cfg_from_file('/home/iitm/a-PyTorch-Tutorial-to-Image-Captioning/StackGAN/code/cfg/coco_eval.yml')
 cfg.GPU_ID ='0'
 cfg.DATA_DIR = ''
     
