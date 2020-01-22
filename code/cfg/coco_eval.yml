@@ -4,7 +4,7 @@ DATASET_NAME: 'coco'
 EMBEDDING_TYPE: 'cnn-rnn'
 GPU_ID: '0,1'
 Z_DIM: 100
-NET_G: '/data2/adsue/pretrained/netG_epoch_90.pth'
+NET_G: '/data2/adsue/pretrained/coco_netG_epoch_90.pth'
 DATA_PATH: '/data2/adsue/caption_data/mini_batch_captions.t7'
 WORKERS: 4
 IMSIZE: 256
