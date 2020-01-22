@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.parallel
-from miscc.config import cfg
+from StackGAN.code.miscc.config import cfg
 from torch.autograd import Variable
 
 
