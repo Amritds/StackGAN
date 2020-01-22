@@ -61,7 +61,7 @@ class GANTrainer(object):
 
     # ############# For training stageII GAN  #############
     def load_network_stageII(self):
-        from model import STAGE1_G, STAGE2_G, STAGE2_D
+        from StackGAN.code.model import STAGE1_G, STAGE2_G, STAGE2_D
 
         Stage1_G = STAGE1_G()
         netG = STAGE2_G(Stage1_G)
