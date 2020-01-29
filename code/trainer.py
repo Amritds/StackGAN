@@ -31,6 +31,8 @@ class GANTrainer(object):
         self.batch_size = cfg.TRAIN.BATCH_SIZE * self.num_gpus
         cudnn.benchmark = True
         
+        self._netG = None
+        
     # ############# For training stageI GAN #############
     def load_network_stageI(self):
         from model import STAGE1_G, STAGE1_D
@@ -101,11 +103,10 @@ class GANTrainer(object):
    
 
     def sample(self, datapath, stage=2):
-        if stage == 1:
-            netG, _ = self.load_network_stageI()
-        else:
-            netG, _ = self.load_network_stageII()
-        netG.eval()
+        
+        if self._netG == None:
+            self._netG, _ = self.load_network_stageII()
+            self._netG.eval()
         
         # Load text embeddings generated from the encoder
         t_file = torchfile.load(datapath)
@@ -145,7 +146,7 @@ class GANTrainer(object):
             noise.data.normal_(0, 1)
             inputs = (txt_embedding, noise)
             _, fake_imgs, mu, logvar = \
-                nn.parallel.data_parallel(netG, inputs, self.gpus)
+                nn.parallel.data_parallel(self._netG, inputs, self.gpus)
             
             for i in range(batch_size):
                 save_name = '%s/%d.jpg' % (save_dir, count + i)
