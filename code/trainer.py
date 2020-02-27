@@ -157,7 +157,7 @@ class GANTrainer(object):
                 im = np.transpose(im, (1, 2, 0))
                 
                 generated_images.append(im)
-                # print('im', im.shape)
+                print('im', im.shape)
                 # im = Image.fromarray(im)
                 # im.save(save_name)
             count += batch_size

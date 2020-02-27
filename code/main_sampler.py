@@ -41,5 +41,5 @@ num_gpu = len(cfg.GPU_ID.split(','))
 datapath= '%s' % (cfg.DATA_PATH)
 algo = GANTrainer(output_dir)
 
-def sample():
+def sample(datapath):
     return algo.sample(datapath, cfg.STAGE)
