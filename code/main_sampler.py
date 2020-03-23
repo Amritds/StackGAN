@@ -42,4 +42,4 @@ datapath= '%s' % (cfg.DATA_PATH)
 algo = GANTrainer(output_dir)
 
 def sample(datapath):
-    return algo.sample(datapath, cfg.STAGE)
+    return algo.sample(datapath + '/mini_batch_captions.t7', cfg.STAGE)
